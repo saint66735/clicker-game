@@ -31,6 +31,20 @@ ExportedObj/
 *.pdb
 *.opendb
 *.VC.db
+# TMP shader
+*.exe0.log
+*.exe1.log
+*.exe2.log
+*.exe3.log
+*.exe4.log
+*.exe5.log
+*.exe6.log
+*.exe7.log
+*.exe8.log
+*.exe9.log
+*.exe10.log
+*.exe11.log
+
 
 # Unity3D generated meta files
 *.pidb.meta
