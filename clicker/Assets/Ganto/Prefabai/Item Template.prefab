@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f1f0a95f1b58d4abcd0b3415619cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleText: {fileID: 3095132691090963047}
+  titleTxt: {fileID: 3095132691090963047}
   descriptionTxt: {fileID: 3095132692507076616}
   costTxt: {fileID: 3095132691308340792}
 --- !u!1 &3095132691090963045
