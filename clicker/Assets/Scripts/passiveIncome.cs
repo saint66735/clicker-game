@@ -24,7 +24,7 @@ public class passiveIncome : MonoBehaviour
         if (timer >= delayAmount)
         {
             timer = 0f;
-            A.yenCoins += passiveIncrease;
+            GameManager2.instance.score += passiveIncrease;
         }
     }
 }

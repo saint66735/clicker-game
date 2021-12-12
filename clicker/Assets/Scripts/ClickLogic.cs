@@ -24,7 +24,7 @@ public class ClickLogic : MonoBehaviour
             {
                 if (hit.transform.CompareTag("moneyMaker")) 
                 {
-                    yenCoins += increase;
+                    GameManager2.instance.score += increase;
                 }
             }
         }
