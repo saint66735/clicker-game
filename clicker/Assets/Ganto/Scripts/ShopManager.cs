@@ -16,7 +16,7 @@ public class ShopManager : MonoBehaviour
     //Kintamieji mano
     public int KiekAktyvausPaspaudimo;
     public int KiekPasyvausPaspaudimo;
-    public ClickLogic Logika;
+    public GameManager2 Logika;
     public ShopLaikmena_SingleTon ParduotuvesKintamieji;
 
 
@@ -33,7 +33,7 @@ public class ShopManager : MonoBehaviour
 
 
         //valdau kintamuosius cia
-        Logika = FindObjectOfType<ClickLogic>();
+        Logika = FindObjectOfType<GameManager2>();
         ParduotuvesKintamieji = FindObjectOfType<ShopLaikmena_SingleTon>();
         KainuResetas();
 
@@ -43,7 +43,7 @@ public class ShopManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coins = Logika.yenCoins;
+        coins = Logika.score;
         CheckPurchesable();
     }
 
@@ -53,7 +53,7 @@ public class ShopManager : MonoBehaviour
         //coinUI.text = "Coins: " + coins.ToString();
 
 
-        Logika.yenCoins++;
+        Logika.score++;
         CheckPurchesable();
     }
 
@@ -77,7 +77,7 @@ public class ShopManager : MonoBehaviour
     {
         if (coins >= shopItemsSO[btnNo].basecost)
         {
-            Logika.yenCoins = Logika.yenCoins - shopItemsSO[btnNo].basecost;
+            Logika.score = Logika.score - shopItemsSO[btnNo].basecost;
 
             //Patikrina kokio tipo preke tai yra
             //Skaiciuoja kiek kartu buvo nupirkta preke

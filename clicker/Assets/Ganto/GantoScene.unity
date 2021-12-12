@@ -1406,7 +1406,10 @@ MonoBehaviour:
   - {fileID: 488289318}
   - {fileID: 113452507}
   - {fileID: 1192086076}
+  KiekAktyvausPaspaudimo: 0
+  KiekPasyvausPaspaudimo: 0
   Logika: {fileID: 0}
+  ParduotuvesKintamieji: {fileID: 0}
 --- !u!1001 &730783612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2851,6 +2854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yenCoinsText: {fileID: 1759597581}
   A: {fileID: 0}
+  roundUp: 0
 --- !u!114 &1817370852 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3095132692157656318, guid: 1610afa60acbecc4ea98327bc472c99a, type: 3}
@@ -3156,6 +3160,7 @@ GameObject:
   - component: {fileID: 1860136580}
   - component: {fileID: 1860136581}
   - component: {fileID: 1860136582}
+  - component: {fileID: 1860136583}
   m_Layer: 0
   m_Name: GameLogic
   m_TagString: Untagged
@@ -3204,6 +3209,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parduotuve: {fileID: 1923578960}
+--- !u!114 &1860136583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860136579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7609cc8a84876034eb63993c322b3d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  amountOfStructures: 0
+  amountOfUpgrades: 0
 --- !u!224 &1864509103 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3095132690497185972, guid: 1610afa60acbecc4ea98327bc472c99a, type: 3}
