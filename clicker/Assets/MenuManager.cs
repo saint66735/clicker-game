@@ -8,11 +8,28 @@ public class MenuManager : MonoBehaviour
     public GameObject SettingsPanel;
     public GameObject ModsPanel;
     public GameObject StartPanel;
+    public GameObject SavePanel;
     public Save save = new Save();
     bool inGame = false;
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (SettingsPanel.activeInHierarchy)
+            {
+                SettingsPanel.SetActive(false);
+                SavePanel.SetActive(false);
+            }
+            else
+            {
+                SettingsPanel.SetActive(true);
+                SavePanel.SetActive(true);
+            }
+        }
     }
     public void OnExitGame()
     {
@@ -28,11 +45,17 @@ public class MenuManager : MonoBehaviour
     }
     public void OnLoadGame()
     {
-        SceneManager.LoadScene(1);
-        save.LoadFile();
+        if (save.LoadFile())
+        {
+            StartPanel.SetActive(false);
+            SettingsPanel.SetActive(false);
+            SceneManager.LoadScene(1);
+        }
     }
     public void OnStartNewGame()
     {
+        StartPanel.SetActive(false);
+            SettingsPanel.SetActive(false);
         SceneManager.LoadScene(1);
         ClearSaveData();
     }
@@ -48,8 +71,13 @@ public class MenuManager : MonoBehaviour
     {
 
     }
+    public void Save()
+    {
+        save.SaveFile();
+    }
     public void Setup()
     {
 
     }
+    
 }

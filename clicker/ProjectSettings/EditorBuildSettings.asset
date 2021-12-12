@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 47fd4d2301eefd64488f19071ed5f5a6
+  - enabled: 1
+    path: Assets/Scenes/DominykoScena.unity
+    guid: 3f4fa97369d586842acba5c398a89e9f
   m_configObjects: {}
