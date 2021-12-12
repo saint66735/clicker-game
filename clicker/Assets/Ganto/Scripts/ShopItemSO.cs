@@ -9,4 +9,10 @@ public class ShopItemSO : ScriptableObject
     public string title;
     public string description;
     public float basecost;
+    public float AktyvusDidinmas;
+    public float pasyvusDidinimas;
+
+    public bool arAktyvus;
+    public bool arPasyvus;
+
 }

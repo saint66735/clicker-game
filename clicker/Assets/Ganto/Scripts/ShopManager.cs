@@ -13,8 +13,11 @@ public class ShopManager : MonoBehaviour
     public ShopTemplate[] shopPanels;
     public Button[] myPurchaseBtns;
 
-    //Kintamieji
+    //Kintamieji mano
+    public int KiekAktyvausPaspaudimo;
+    public int KiekPasyvausPaspaudimo;
     public ClickLogic Logika;
+    public ShopLaikmena_SingleTon ParduotuvesKintamieji;
 
 
     // Start is called before the first frame update
@@ -25,17 +28,16 @@ public class ShopManager : MonoBehaviour
             shopPanelsSO[i].SetActive(true);
         }
         //coinUI.text = "Coins: " + coins.ToString();
-        LoadPanels();
-
+        
         CheckPurchesable();
-
-
 
 
         //valdau kintamuosius cia
         Logika = FindObjectOfType<ClickLogic>();
+        ParduotuvesKintamieji = FindObjectOfType<ShopLaikmena_SingleTon>();
+        KainuResetas();
 
-
+        LoadPanels();
     }
 
     // Update is called once per frame
@@ -71,18 +73,35 @@ public class ShopManager : MonoBehaviour
     }
 
 
-    public void PurchaseItems(int btnNo) //Prideda Pinigus
+    public void PurchaseItems(int btnNo)
     {
         if (coins >= shopItemsSO[btnNo].basecost)
         {
             Logika.yenCoins = Logika.yenCoins - shopItemsSO[btnNo].basecost;
-            //CheckPurchesable();
+
+            //Patikrina kokio tipo preke tai yra
+            //Skaiciuoja kiek kartu buvo nupirkta preke
+            if (shopItemsSO[btnNo].arAktyvus)
+            {
+                ParduotuvesKintamieji.KiekAktyvausPaspaudimo++;
+            }
+            if (shopItemsSO[btnNo].arPasyvus)
+            {
+                ParduotuvesKintamieji.KiekPasyvausPaspaudimo++;
+            }
+            //Skaiciuoja kiek kartu buvo nupirkta preke
+            //ParduotuvesKintamieji.KiekAktyvausPaspaudimo++;
+            //ParduotuvesKintamieji.KiekPasyvausPaspaudimo++;
+            //Patikrina ar reikia didinti prekes kaina
+            AktyvausPadidinimas(btnNo);
+            PasyvausPadidinimas(btnNo);
+            LoadPanels();
         }
 
     }
 
 
-        public void LoadPanels() //Prideda Pinigus
+        public void LoadPanels()
         {
 
         for (int i = 0; i < shopItemsSO.Length; i++)
@@ -93,5 +112,32 @@ public class ShopManager : MonoBehaviour
             }
 
         }
+
+
+    public void AktyvausPadidinimas(int btnNo)
+    {
+        if (ParduotuvesKintamieji.KiekAktyvausPaspaudimo == 2)
+        {
+            shopItemsSO[btnNo].basecost = shopItemsSO[btnNo].basecost * 2;
+            ParduotuvesKintamieji.KiekAktyvausPaspaudimo = 0;
+        }
+    }
+
+    public void PasyvausPadidinimas(int btnNo)
+    {
+        if (ParduotuvesKintamieji.KiekPasyvausPaspaudimo == 2)
+        {
+            shopItemsSO[btnNo].basecost = shopItemsSO[btnNo].basecost * 2;
+            ParduotuvesKintamieji.KiekPasyvausPaspaudimo = 0;
+        }
+    }
+
+
+    public void KainuResetas()
+    {
+        shopItemsSO[0].basecost = 1;
+        shopItemsSO[1].basecost = 1;
+
+    }
 }
 

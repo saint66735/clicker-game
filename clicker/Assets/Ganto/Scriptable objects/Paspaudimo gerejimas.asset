@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a377b83d9677a014e8f4c2a3ae4de157, type: 3}
   m_Name: Paspaudimo gerejimas
   m_EditorClassIdentifier: 
-  title: PP
-  description: paspaudimo pagerinimas
-  basecost: 40
+  title: Aktyvus Didinimas
+  description: ---
+  basecost: 5
+  AktyvusDidinmas: 5
+  pasyvusDidinimas: 0
+  arAktyvus: 1
+  arPasyvus: 0
