@@ -12,6 +12,7 @@ public class Save : MonoBehaviour
     int currentBuilding3Count;
     public static Save instance;
     GameData currentState;
+    bool dirtyFlag = true;
     void Awake()
     {
         if (instance != null && instance != this)
@@ -20,22 +21,38 @@ public class Save : MonoBehaviour
         }
         instance = this;
     }
-    public void UpdateStats(GameData newState)
+    public void GetState()
     {
-        currentState = newState;
+        GameData temp = FindObjectOfType<GameManager2>().UpdateState();
+        if (currentState == null || !currentState.Equals(temp))
+        {
+            currentState = temp;
+            dirtyFlag = true;
+        }
+        else
+        {
+            dirtyFlag = false;
+        }
     }
     public void SaveFile()
     {
-        string destination = Application.persistentDataPath + "/save.dat";
-        FileStream file;
+        if (dirtyFlag)
+        {
+            string destination = Application.persistentDataPath + "/save.dat";
+            FileStream file;
 
-        if (File.Exists(destination)) file = File.OpenWrite(destination);
-        else file = File.Create(destination);
+            if (File.Exists(destination)) file = File.OpenWrite(destination);
+            else file = File.Create(destination);
 
-        GameData data = currentState;
-        BinaryFormatter bf = new BinaryFormatter();
-        bf.Serialize(file, data);
-        file.Close();
+            GameData data = currentState;
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(file, data);
+            file.Close();
+        }
+        else
+        {
+            Debug.Log("Nuffin changed");
+        }
     }
 
     public bool LoadFile()
@@ -59,6 +76,7 @@ public class Save : MonoBehaviour
         currentBuilding1Count = data.building1Count;
         currentBuilding1Count = data.building2Count;
         currentBuilding1Count = data.building3Count;
+        currentState = data;
         return true;
     }
     public void NewGame()

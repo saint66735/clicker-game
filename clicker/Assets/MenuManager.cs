@@ -10,7 +10,6 @@ public class MenuManager : MonoBehaviour
     public GameObject StartPanel;
     public GameObject SavePanel;
     Save save;
-    bool inGame = false;
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -75,7 +74,7 @@ public class MenuManager : MonoBehaviour
     }
     public void Save()
     {
-        save.UpdateStats(FindObjectOfType<GameManager2>().UpdateState());
+        save.GetState();
         save.SaveFile();
     }
     public void Setup()

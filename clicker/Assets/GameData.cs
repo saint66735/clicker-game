@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [System.Serializable]
-public class GameData 
+public class GameData : IEquatable<GameData>
 {
     public float yen;
     public int petals;
@@ -18,5 +19,12 @@ public class GameData
         this.building1Count = building1Count;
         this.building2Count = building2Count;
         this.building3Count = building3Count;
+    }
+
+    public bool Equals(GameData other)
+    {
+        if (yen == other.yen && building1Count == other.building1Count && building2Count == other.building2Count && building3Count == other.building3Count)
+            return true;
+        return false;
     }
 }
