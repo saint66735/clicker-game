@@ -1406,10 +1406,8 @@ MonoBehaviour:
   - {fileID: 488289318}
   - {fileID: 113452507}
   - {fileID: 1192086076}
-  KiekAktyvausPaspaudimo: 0
-  KiekPasyvausPaspaudimo: 0
   Logika: {fileID: 0}
-  ParduotuvesKintamieji: {fileID: 0}
+  Facade: {fileID: 0}
 --- !u!1001 &730783612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3222,7 +3220,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  amountOfStructures: 0
+  building1Count: 0
+  building2Count: 0
+  building3Count: 0
   amountOfUpgrades: 0
 --- !u!224 &1864509103 stripped
 RectTransform:
@@ -3392,7 +3392,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1923578961}
+  - component: {fileID: 1923578964}
   - component: {fileID: 1923578962}
+  - component: {fileID: 1923578963}
   m_Layer: 0
   m_Name: ShopObjects
   m_TagString: Untagged
@@ -3429,9 +3431,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KiekAktyvausPaspaudimo: 0
+  AktyvausKofas: 0
+--- !u!114 &1923578963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923578960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06541f96e07edc4ba3615998fc0b60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   KiekPasyvausPaspaudimo: 0
   PasyvausKofas: 0
-  AktyvausKofas: 0
+--- !u!114 &1923578964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923578960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc56e51a176e8b46b92d45811fad270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AktyvusKintamieji: {fileID: 0}
+  PasyvusKintamieji: {fileID: 0}
 --- !u!1 &2047701140
 GameObject:
   m_ObjectHideFlags: 0

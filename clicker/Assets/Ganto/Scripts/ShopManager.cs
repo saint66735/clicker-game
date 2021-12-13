@@ -14,10 +14,10 @@ public class ShopManager : MonoBehaviour
     public Button[] myPurchaseBtns;
 
     //Kintamieji mano
-    public int KiekAktyvausPaspaudimo;
-    public int KiekPasyvausPaspaudimo;
     public GameManager2 Logika;
-    public ShopLaikmena_SingleTon ParduotuvesKintamieji;
+    //public AktyviosPrekes ParduotuvesKintamieji;
+    public ShopFacade Facade;
+
 
 
     // Start is called before the first frame update
@@ -34,7 +34,8 @@ public class ShopManager : MonoBehaviour
 
         //valdau kintamuosius cia
         Logika = FindObjectOfType<GameManager2>();
-        ParduotuvesKintamieji = FindObjectOfType<ShopLaikmena_SingleTon>();
+        Facade = FindObjectOfType<ShopFacade>();
+
         KainuResetas();
 
         LoadPanels();
@@ -53,7 +54,7 @@ public class ShopManager : MonoBehaviour
         //coinUI.text = "Coins: " + coins.ToString();
 
 
-        Logika.score++;
+        Logika.score = Logika.score + 500;
         CheckPurchesable();
     }
 
@@ -83,11 +84,11 @@ public class ShopManager : MonoBehaviour
             //Skaiciuoja kiek kartu buvo nupirkta preke
             if (shopItemsSO[btnNo].arAktyvus)
             {
-                ParduotuvesKintamieji.KiekAktyvausPaspaudimo++;
+                Facade.AktyvusAdd();
             }
             if (shopItemsSO[btnNo].arPasyvus)
             {
-                ParduotuvesKintamieji.KiekPasyvausPaspaudimo++;
+                Facade.PasyvusAdd();
             }
             //Skaiciuoja kiek kartu buvo nupirkta preke
             //ParduotuvesKintamieji.KiekAktyvausPaspaudimo++;
@@ -116,19 +117,19 @@ public class ShopManager : MonoBehaviour
 
     public void AktyvausPadidinimas(int btnNo)
     {
-        if (ParduotuvesKintamieji.KiekAktyvausPaspaudimo == 2)
+        if (Facade.AktyvusCheck())
         {
             shopItemsSO[btnNo].basecost = shopItemsSO[btnNo].basecost * 2;
-            ParduotuvesKintamieji.KiekAktyvausPaspaudimo = 0;
+            Facade.AktyvusReset();
         }
     }
 
     public void PasyvausPadidinimas(int btnNo)
     {
-        if (ParduotuvesKintamieji.KiekPasyvausPaspaudimo == 2)
+        if (Facade.PasyvusCheck())
         {
             shopItemsSO[btnNo].basecost = shopItemsSO[btnNo].basecost * 2;
-            ParduotuvesKintamieji.KiekPasyvausPaspaudimo = 0;
+            Facade.PasyvusReset();
         }
     }
 
