@@ -7,7 +7,7 @@ public class Options : MonoBehaviour
     // Start is called before the first frame update
     Resolution[] resolutions;
     public TMP_Dropdown res;
-    void Awake()
+    void Start()
     {
         resolutions = Screen.resolutions;
         res.ClearOptions();

@@ -9,11 +9,12 @@ public class MenuManager : MonoBehaviour
     public GameObject ModsPanel;
     public GameObject StartPanel;
     public GameObject SavePanel;
-    public Save save = new Save();
+    Save save;
     bool inGame = false;
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        save = FindObjectOfType<Save>();
     }
     void Update()
     {
@@ -45,6 +46,7 @@ public class MenuManager : MonoBehaviour
     }
     public void OnLoadGame()
     {
+
         if (save.LoadFile())
         {
             StartPanel.SetActive(false);
@@ -55,7 +57,7 @@ public class MenuManager : MonoBehaviour
     public void OnStartNewGame()
     {
         StartPanel.SetActive(false);
-            SettingsPanel.SetActive(false);
+        SettingsPanel.SetActive(false);
         SceneManager.LoadScene(1);
         ClearSaveData();
     }
@@ -73,11 +75,12 @@ public class MenuManager : MonoBehaviour
     }
     public void Save()
     {
+        save.UpdateStats(FindObjectOfType<GameManager2>().UpdateState());
         save.SaveFile();
     }
     public void Setup()
     {
 
     }
-    
+
 }
