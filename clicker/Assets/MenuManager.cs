@@ -9,11 +9,9 @@ public class MenuManager : MonoBehaviour
     public GameObject ModsPanel;
     public GameObject StartPanel;
     public GameObject SavePanel;
-    Save save;
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-        save = FindObjectOfType<Save>();
     }
     void Update()
     {
@@ -33,6 +31,7 @@ public class MenuManager : MonoBehaviour
     }
     public void OnExitGame()
     {
+        Save.instance.SaveFile();
         Application.Quit();
     }
     public void OnSettingsClick()
@@ -46,7 +45,7 @@ public class MenuManager : MonoBehaviour
     public void OnLoadGame()
     {
 
-        if (save.LoadFile())
+        if (Save.instance.LoadFile())
         {
             StartPanel.SetActive(false);
             SettingsPanel.SetActive(false);
@@ -62,7 +61,7 @@ public class MenuManager : MonoBehaviour
     }
     public void ClearSaveData()
     {
-        save.NewGame();
+        Save.instance.NewGame();
     }
     public void OnSelectModsMenu()
     {
@@ -72,10 +71,9 @@ public class MenuManager : MonoBehaviour
     {
 
     }
-    public void Save()
+    public void OnSave()
     {
-        save.GetState();
-        save.SaveFile();
+        Save.instance.SaveFile();
     }
     public void Setup()
     {

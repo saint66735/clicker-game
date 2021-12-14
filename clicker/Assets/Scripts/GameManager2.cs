@@ -31,7 +31,7 @@ public class GameManager2 : MonoBehaviour
     }
     void NotifyLoad()
     {
-        FindObjectOfType<Save>().ApplyLoad(instance);
+        Save.instance.ApplyLoad(instance);
     }
 
 }

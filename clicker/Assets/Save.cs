@@ -10,7 +10,7 @@ public class Save : MonoBehaviour
     int currentBuilding1Count;
     int currentBuilding2Count;
     int currentBuilding3Count;
-    public static Save instance;
+    public static Save instance = null;
     GameData currentState;
     bool dirtyFlag = true;
     void Awake()
@@ -23,7 +23,7 @@ public class Save : MonoBehaviour
     }
     public void GetState()
     {
-        GameData temp = FindObjectOfType<GameManager2>().UpdateState();
+        GameData temp = GameManager2.instance.UpdateState();
         if (currentState == null || !currentState.Equals(temp))
         {
             currentState = temp;
@@ -36,6 +36,7 @@ public class Save : MonoBehaviour
     }
     public void SaveFile()
     {
+        GetState();
         if (dirtyFlag)
         {
             string destination = Application.persistentDataPath + "/save.dat";
