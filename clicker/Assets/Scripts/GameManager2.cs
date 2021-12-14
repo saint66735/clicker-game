@@ -20,10 +20,14 @@ public class GameManager2 : MonoBehaviour
     {
         if (instance != null && instance != this)
         {
-            Destroy(gameObject);           
-        }    
-        instance = this;
-        NotifyLoad();
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            NotifyLoad();
+        }
+
     }
     public GameData UpdateState()
     {

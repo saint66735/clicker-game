@@ -19,7 +19,10 @@ public class Save : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        instance = this;
+        else
+        {
+            instance = this;
+        }
     }
     public void GetState()
     {
