@@ -5,7 +5,9 @@ using UnityEngine;
 public class Ijungimas : MonoBehaviour
 {
 
-    public GameObject parduotuve;
+    public GameObject Parduotuve;
+    public GameObject Coins;
+    public GameObject Text;
 
     // Start is called before the first frame update
     void Start()
@@ -18,25 +20,33 @@ public class Ijungimas : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            if (parduotuve.activeInHierarchy == true)
+            if (Parduotuve.activeInHierarchy == true)
             {
-                parduotuve.SetActive(false);
+                Parduotuve.SetActive(false);
             }
             else
-                parduotuve.SetActive(true);
+                Parduotuve.SetActive(true);
+
+
+
+            if (Coins.activeInHierarchy == true)
+            {
+                Coins.SetActive(false);
+            }
+            else
+                Coins.SetActive(true);
+
+
+
+            if (Text.activeInHierarchy == true)
+            {
+                Text.SetActive(false);
+            }
+            else
+                Text.SetActive(true);
         }
     }
 
 
 
-    public void whenButtonClicked() 
-    {
-        if (parduotuve.activeInHierarchy == true)
-        {
-            parduotuve.SetActive(false);
-        }
-        else
-            parduotuve.SetActive(true);
-
-    }
 }

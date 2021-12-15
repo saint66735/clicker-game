@@ -1,13 +1,15 @@
 using System.Collections;
+//using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class ShopManager : MonoBehaviour
 {
-    public float coins;
-    //public TMP_Text coinUI;
+    public double coins;
+    public TMP_Text coinUI;
     public ShopItemSO[] shopItemsSO;
     public GameObject[] shopPanelsSO;
     public ShopTemplate[] shopPanels;
@@ -46,14 +48,11 @@ public class ShopManager : MonoBehaviour
     {
         coins = Logika.score;
         CheckPurchesable();
+        coinUI.text = Logika.score.ToString();
     }
 
     public void AddCoins() //Prideda Pinigus
-    {
-        //coins++;
-        //coinUI.text = "Coins: " + coins.ToString();
-
-
+    {                
         Logika.score = Logika.score + 500;
         CheckPurchesable();
     }
@@ -119,7 +118,8 @@ public class ShopManager : MonoBehaviour
     {
         if (Facade.AktyvusCheck())
         {
-            shopItemsSO[btnNo].basecost = shopItemsSO[btnNo].basecost * 2;
+            //shopItemsSO[btnNo].basecost = shopItemsSO[btnNo].basecost * 2;
+            shopItemsSO[btnNo].basecost = (float)Math.Round((Facade.Item1(shopItemsSO[btnNo].basecost)), 2);
             Facade.AktyvusReset();
         }
     }
@@ -128,7 +128,8 @@ public class ShopManager : MonoBehaviour
     {
         if (Facade.PasyvusCheck())
         {
-            shopItemsSO[btnNo].basecost = shopItemsSO[btnNo].basecost * 2;
+            //shopItemsSO[btnNo].basecost = shopItemsSO[btnNo].basecost * 2;
+            shopItemsSO[btnNo].basecost = (float)Math.Round((Facade.Item2(shopItemsSO[btnNo].basecost)), 2);
             Facade.PasyvusReset();
         }
     }
@@ -136,8 +137,8 @@ public class ShopManager : MonoBehaviour
 
     public void KainuResetas()
     {
-        shopItemsSO[0].basecost = 1;
-        shopItemsSO[1].basecost = 1;
+        shopItemsSO[0].basecost = 3.73f;
+        shopItemsSO[1].basecost = 60;
 
     }
 }
