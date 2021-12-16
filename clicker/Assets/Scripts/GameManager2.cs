@@ -15,13 +15,13 @@ public class GameManager2 : MonoBehaviour
     public int amountOfUpgrades;
     GameData data;
 
-    public ShopManager Shop;
+  //  public ShopManager Shop;
 
 
 
     void Start()
     {
-        Shop = FindObjectOfType<ShopManager>();
+       // Shop = FindObjectOfType<ShopManager>();
 
 
         if (instance != null && instance != this)
@@ -35,10 +35,10 @@ public class GameManager2 : MonoBehaviour
                 NotifyLoad();
         }
 
-        if (FindObjectOfType<MenuManager>().loaded == false) 
-        {
-            Shop.KainuResetas();
-        }
+        //if (FindObjectOfType<MenuManager>().loaded == false) 
+        //{
+        //    Shop.KainuResetas();
+        //}
 
 
     }

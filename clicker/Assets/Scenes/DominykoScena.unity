@@ -1302,7 +1302,6 @@ MonoBehaviour:
   building1Count: 0
   building2Count: 0
   amountOfUpgrades: 0
-  Shop: {fileID: 0}
 --- !u!114 &1637658104
 MonoBehaviour:
   m_ObjectHideFlags: 0
