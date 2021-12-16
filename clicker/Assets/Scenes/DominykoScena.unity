@@ -1033,6 +1033,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4664467012010094644, guid: 1427f6f422314014abb9ed1bbf8a81a0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664467012010094644, guid: 1427f6f422314014abb9ed1bbf8a81a0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4664467012520875170, guid: 1427f6f422314014abb9ed1bbf8a81a0, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1080,6 +1088,10 @@ PrefabInstance:
     - target: {fileID: 4664467012520875171, guid: 1427f6f422314014abb9ed1bbf8a81a0, type: 3}
       propertyPath: m_Name
       value: ShopObjects
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664467012520875171, guid: 1427f6f422314014abb9ed1bbf8a81a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1427f6f422314014abb9ed1bbf8a81a0, type: 3}

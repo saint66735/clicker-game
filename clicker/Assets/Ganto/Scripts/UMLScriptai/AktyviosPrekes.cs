@@ -4,24 +4,31 @@ using UnityEngine;
 
 public class AktyviosPrekes : MonoBehaviour
 {
-
+    public static AktyviosPrekes instance = null;
 
     public int KiekAktyvausPaspaudimo;
-    //public int KiekPasyvausPaspaudimo;
+    public int VisosAktyviosPrekes;
 
-    // public int PasyvausKofas;
-    public int AktyvausKofas;
-
-    private void Start()
+    void Awake()
     {
+
         KiekAktyvausPaspaudimo = 0;
-        //KiekPasyvausPaspaudimo = 0;
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+
     }
 
     public void Add()
     {
 
         KiekAktyvausPaspaudimo++;
+        VisosAktyviosPrekes++;
 
     }
 
