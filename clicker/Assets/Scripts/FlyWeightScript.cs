@@ -30,7 +30,7 @@ public class FlyWeightScript : MonoBehaviour
     {
 
         //Create all aliens
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < 10; i++)
         {
             grass.location = GeneratePosition();
             grass.rotation = GenerateRotation();
@@ -40,14 +40,14 @@ public class FlyWeightScript : MonoBehaviour
 
     private Vector3 GeneratePosition()
     {
-        Vector3 random = new Vector3(Random.Range(-1.0f, 1.0f), 0.364f, Random.Range(-9.0f, -7.0f)); 
+        Vector3 random = new Vector3(Random.Range(-1.0f, 1.0f), 0.277f, Random.Range(-9.0f, -7.0f)); 
         return random;
 
     }
 
     private Vector3 GenerateRotation()
     {
-        Vector3 random = new Vector3(0, Random.Range(0f, 360.0f), -90);
+        Vector3 random = new Vector3(0, Random.Range(0f, 360.0f), 0);
         return random;
     }
 

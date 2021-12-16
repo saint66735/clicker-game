@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using Random = UnityEngine.Random;
 
-public class AddFlora : MonoBehaviour
+public class createFlora : MonoBehaviour
 {
     public GameObject yellowFlora;
     public GameObject redFlora;
@@ -14,6 +14,7 @@ public class AddFlora : MonoBehaviour
     public GameObject grassObject;
 
 
+
     public class Grass
     {
         public Vector3 location;
@@ -21,19 +22,29 @@ public class AddFlora : MonoBehaviour
         public Vector3 rotation;
     }
 
-    public void AddActiveItemFlora()
+    public void AddActiveItemFlora(int active)
     {
-        grass.location = GeneratePosition();
-        grass.rotation = GenerateRotation();
-        Instantiate(yellowFlora, grass.location, Quaternion.Euler(grass.rotation));
+        for (int i = 0; i < active; i++)
+        {
+            grass.location = GeneratePosition();
+            grass.rotation = GenerateRotation();
+            Instantiate(yellowFlora, grass.location, Quaternion.Euler(grass.rotation));
+        }
+        
     }
 
-    public void AddPassiveItemFlora()
+    public void AddPassiveItemFlora(int passive)
     {
-        grass.location = GeneratePosition();
-        grass.rotation = GenerateRotation();
-        Instantiate(redFlora, grass.location, Quaternion.Euler(grass.rotation));
+
+        for (int i = 0; i < passive; i++)
+        {
+            grass.location = GeneratePosition();
+            grass.rotation = GenerateRotation();
+            Instantiate(yellowFlora, grass.location, Quaternion.Euler(grass.rotation));
+        }
     }
+
+   
 
 
     private Vector3 GeneratePosition()
