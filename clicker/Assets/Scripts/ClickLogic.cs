@@ -6,6 +6,7 @@ public class ClickLogic : MonoBehaviour
 {
     public float yenCoins = 0.0f;
     public float increase = 0.5f;
+    public float Active_Kof = 1;
     public RaycastHit hit;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class ClickLogic : MonoBehaviour
             {
                 if (hit.transform.CompareTag("moneyMaker")) 
                 {
-                    GameManager2.instance.score += increase;
+                    GameManager2.instance.score += increase * Active_Kof;
                 }
             }
         }

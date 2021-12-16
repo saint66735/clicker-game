@@ -259,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5123720035635825737, guid: 3ed6526d1aefdd64699622d63855815e, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5123720035635825737, guid: 3ed6526d1aefdd64699622d63855815e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -320,7 +320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3040734155590844067, guid: deb9c6f582af5ae46a0c726b668d1613, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3040734155590844067, guid: deb9c6f582af5ae46a0c726b668d1613, type: 3}
       propertyPath: m_LocalPosition.x
@@ -550,7 +550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7615641031522937018, guid: f097fbed9c765c9499787b4b49544a9d, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7615641031522937018, guid: f097fbed9c765c9499787b4b49544a9d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1177,6 +1177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yenCoins: 0
   increase: 0.5
+  Active_Kof: 1
 --- !u!114 &1860136582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1197,6 +1198,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4664467011257839807, guid: 1427f6f422314014abb9ed1bbf8a81a0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4664467012010094644, guid: 1427f6f422314014abb9ed1bbf8a81a0, type: 3}
       propertyPath: m_SizeDelta.x
       value: 30
@@ -1207,7 +1212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4664467012520875170, guid: 1427f6f422314014abb9ed1bbf8a81a0, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4664467012520875170, guid: 1427f6f422314014abb9ed1bbf8a81a0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1301,9 +1306,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76868f1394e2324428f95e7dcd64de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passiveIncrease: 0.1
+  passiveIncrease: 0.5
   A: {fileID: 0}
   delayAmount: 1
+  Passive_Kof: 1
 --- !u!135 &2109175813
 SphereCollider:
   m_ObjectHideFlags: 0

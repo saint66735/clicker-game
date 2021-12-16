@@ -11,10 +11,6 @@ public class PasyviosPrekes : MonoBehaviour
 
     public int VisosPasyviosPrekes;
 
-    //private void Start()
-    //{
-    //    KiekPasyvausPaspaudimo = 0;
-    //}
 
     void Awake()
     {
@@ -55,6 +51,14 @@ public class PasyviosPrekes : MonoBehaviour
     {
 
         KiekPasyvausPaspaudimo = 0;
+
+    }
+
+
+    public float TakeAll()
+    {
+
+        return VisosPasyviosPrekes;
 
     }
 }

@@ -19,6 +19,9 @@ public class ShopManager : MonoBehaviour
     public GameManager2 Logika;
     //public AktyviosPrekes ParduotuvesKintamieji;
     public ShopFacade Facade;
+    //Instanc geliu atsiradimui
+    public createFlora Flora;
+
 
 
 
@@ -37,6 +40,7 @@ public class ShopManager : MonoBehaviour
         //valdau kintamuosius cia
         Logika = FindObjectOfType<GameManager2>();
         Facade = FindObjectOfType<ShopFacade>();
+        Flora = FindObjectOfType<createFlora>();
 
         KainuResetas();
 
@@ -121,7 +125,10 @@ public class ShopManager : MonoBehaviour
             //shopItemsSO[btnNo].basecost = shopItemsSO[btnNo].basecost * 2;
             shopItemsSO[btnNo].basecost = (float)Math.Round((Facade.Item1(shopItemsSO[btnNo].basecost)), 2);
             Facade.AktyvusReset();
+            Flora.AddActiveItemFlora(1);
+            //Facade.Active_Kof();
         }
+        Facade.Active_Kof();
     }
 
     public void PasyvausPadidinimas(int btnNo)
@@ -131,7 +138,9 @@ public class ShopManager : MonoBehaviour
             //shopItemsSO[btnNo].basecost = shopItemsSO[btnNo].basecost * 2;
             shopItemsSO[btnNo].basecost = (float)Math.Round((Facade.Item2(shopItemsSO[btnNo].basecost)), 2);
             Facade.PasyvusReset();
+            Flora.AddPassiveItemFlora(1);
         }
+        Facade.Passive_Kof();
     }
 
 

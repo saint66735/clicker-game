@@ -10,12 +10,18 @@ public class ShopFacade : MonoBehaviour //Klase skirta persiusti duomenis i reik
     public PasyviosPrekes PasyvusKintamieji;
     public Kofu_Decorator Kofai;
 
+    //Pakeicia kofus pirkimo
+    public ClickLogic ActiveLogic;
+    public passiveIncome PassiveLogic;
+
     // Start is called before the first frame update
     void Start()
     {
         AktyvusKintamieji = FindObjectOfType<AktyviosPrekes>();
         PasyvusKintamieji = FindObjectOfType<PasyviosPrekes>();
         Kofai = FindObjectOfType<Kofu_Decorator>();
+        ActiveLogic = FindObjectOfType<ClickLogic>();
+        PassiveLogic = FindObjectOfType<passiveIncome>();
     }
 
     // Update is called once per frame
@@ -33,7 +39,11 @@ public class ShopFacade : MonoBehaviour //Klase skirta persiusti duomenis i reik
     public void PasyvusReset() { PasyvusKintamieji.Reset(); }
 
     public float Item1(float a) { return Kofai.Item1(a); }
+    public void Active_Kof() { ActiveLogic.Active_Kof = 0.2f * AktyvusKintamieji.TakeAll(); }
+
+
     public float Item2(float a) { return Kofai.Item2(a); }
+    public void Passive_Kof() { PassiveLogic.Passive_Kof = 0.5f * PasyvusKintamieji.TakeAll(); }
 
 
 

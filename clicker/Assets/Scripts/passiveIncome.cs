@@ -10,6 +10,8 @@ public class passiveIncome : MonoBehaviour
     private float timer = 0f;
     public float delayAmount;
 
+    public float Passive_Kof = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,7 @@ public class passiveIncome : MonoBehaviour
         if (timer >= delayAmount)
         {
             timer = 0f;
-            GameManager2.instance.score += passiveIncrease;
+            GameManager2.instance.score += passiveIncrease * Passive_Kof;
         }
     }
 }

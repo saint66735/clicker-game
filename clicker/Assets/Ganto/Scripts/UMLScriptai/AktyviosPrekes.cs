@@ -50,4 +50,11 @@ public class AktyviosPrekes : MonoBehaviour
         KiekAktyvausPaspaudimo = 0;
 
     }
+
+    public float TakeAll()
+    {
+
+        return VisosAktyviosPrekes;
+
+    }
 }
