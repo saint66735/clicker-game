@@ -11,7 +11,6 @@ public class GameManager2 : MonoBehaviour
 
     public int building1Count;
     public int building2Count;
-    public int building3Count;
 
     public int amountOfUpgrades;
 
@@ -31,11 +30,12 @@ public class GameManager2 : MonoBehaviour
     }
     public GameData UpdateState()
     {
-        return new GameData(score, 0, building1Count, building2Count, building3Count);
+        return new GameData(score, 0, building1Count, building2Count);
     }
     void NotifyLoad()
     {
         Save.instance.ApplyLoad(instance);
+        CurrentState.instance.CaptureState();
     }
 
 }

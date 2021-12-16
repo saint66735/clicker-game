@@ -8,22 +8,20 @@ public class GameData : IEquatable<GameData>
 {
     public float yen;
     public int petals;
-    public int building1Count;
-    public int building2Count;
-    public int building3Count;
+    public int passiveBuildingCount;
+    public int activeBuildingCount;
 
-    public GameData(float yen, int petals, int building1Count, int building2Count, int building3Count)
+    public GameData(float yen, int petals, int building1Count, int building2Count)
     {
         this.yen = yen;
         this.petals = petals;
-        this.building1Count = building1Count;
-        this.building2Count = building2Count;
-        this.building3Count = building3Count;
+        this.passiveBuildingCount = building1Count;
+        this.activeBuildingCount = building2Count;
     }
 
     public bool Equals(GameData other)
     {
-        if (yen == other.yen && building1Count == other.building1Count && building2Count == other.building2Count && building3Count == other.building3Count)
+        if (yen == other.yen && passiveBuildingCount == other.passiveBuildingCount && activeBuildingCount == other.activeBuildingCount )
             return true;
         return false;
     }

@@ -7,9 +7,8 @@ public class Save : MonoBehaviour
 {
     float currentYen;
     int currentPetals;
-    int currentBuilding1Count;
-    int currentBuilding2Count;
-    int currentBuilding3Count;
+    int currentPassiveIncomeCount;
+    int currentActiveIncomeCount;
     public static Save instance = null;
     GameData currentState;
     bool dirtyFlag = true;
@@ -39,8 +38,8 @@ public class Save : MonoBehaviour
     }
     public void SaveFile()
     {
-        GetState();
-        if (dirtyFlag)
+        currentState = CurrentState.instance.CaptureState();
+        if (CurrentState.instance.dirtyFlag)
         {
             string destination = Application.persistentDataPath + "/save.dat";
             FileStream file;
@@ -77,9 +76,8 @@ public class Save : MonoBehaviour
 
         currentYen = data.yen;
         currentPetals = data.petals;
-        currentBuilding1Count = data.building1Count;
-        currentBuilding1Count = data.building2Count;
-        currentBuilding1Count = data.building3Count;
+        currentPassiveIncomeCount = data.passiveBuildingCount;
+        currentPassiveIncomeCount = data.activeBuildingCount;
         currentState = data;
         return true;
     }
@@ -89,11 +87,13 @@ public class Save : MonoBehaviour
 
         if (File.Exists(destination)) File.Delete(destination);
     }
-    public void ApplyLoad(GameManager2 instance)
+    public void ApplyLoad()
     {
-        instance.building1Count = currentBuilding1Count;
-        instance.building1Count = currentBuilding2Count;
-        instance.building1Count = currentBuilding3Count;
-        instance.score = currentYen;
+
+        GameManager2.instance.building1Count = currentPassiveIncomeCount;
+        GameManager2.instance.building2Count = currentActiveIncomeCount;
+        GameManager2.instance.score = currentYen;
+        AktyviosPrekes.instance.VisosAktyviosPrekes = currentActiveIncomeCount;
+        PasyviosPrekes.instance.VisosPasyviosPrekes = currentPassiveIncomeCount;
     }
 }
