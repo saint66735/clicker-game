@@ -8,6 +8,9 @@ using System;
 
 public class ShopManager : MonoBehaviour
 {
+    public float Cost1;
+    public float Cost2;
+
     public double coins;
     public TMP_Text coinUI;
     public ShopItemSO[] shopItemsSO;
@@ -21,6 +24,8 @@ public class ShopManager : MonoBehaviour
     public ShopFacade Facade;
     //Instanc geliu atsiradimui
     public createFlora Flora;
+    //MenuManager
+    //public MenuManager Menu;
 
 
 
@@ -41,10 +46,16 @@ public class ShopManager : MonoBehaviour
         Logika = FindObjectOfType<GameManager2>();
         Facade = FindObjectOfType<ShopFacade>();
         Flora = FindObjectOfType<createFlora>();
+        //Menu = FindObjectOfType<MenuManager>();
 
         KainuResetas();
-
         LoadPanels();
+
+        //if (Menu.loaded == false)
+        //{
+        //    KainuResetas();
+        //}
+
     }
 
     // Update is called once per frame
@@ -150,5 +161,11 @@ public class ShopManager : MonoBehaviour
         shopItemsSO[1].basecost = 60;
 
     }
+    public void IfLoaded()
+    {
+        shopItemsSO[0].basecost = Cost1;
+        shopItemsSO[1].basecost = Cost2;
+    }
+
 }
 
