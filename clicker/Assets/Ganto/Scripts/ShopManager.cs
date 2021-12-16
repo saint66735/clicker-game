@@ -8,6 +8,10 @@ using System;
 
 public class ShopManager : MonoBehaviour
 {
+
+    public float Coast1;
+    public float Coast2;
+
     public float coins;
     public TMP_Text coinUI;
     public ShopItemSO[] shopItemsSO;
@@ -21,7 +25,6 @@ public class ShopManager : MonoBehaviour
     public ShopFacade Facade;
     //Instanc geliu atsiradimui
     public createFlora Flora;
-
     public float roundUp;
 
 
@@ -44,7 +47,14 @@ public class ShopManager : MonoBehaviour
         Facade = FindObjectOfType<ShopFacade>();
         Flora = FindObjectOfType<createFlora>();
 
-        KainuResetas();
+        if (FindObjectOfType<MenuManager>().loaded == false)
+        {
+            KainuResetas();
+        }
+        else {
+        
+        
+        }
 
         LoadPanels();
     }
@@ -132,6 +142,7 @@ public class ShopManager : MonoBehaviour
             //Facade.Active_Kof();
         }
         Facade.Active_Kof();
+        BeforeLoad();
     }
 
     public void PasyvausPadidinimas(int btnNo)
@@ -144,6 +155,7 @@ public class ShopManager : MonoBehaviour
             Flora.AddPassiveItemFlora(1);
         }
         Facade.Passive_Kof();
+        BeforeLoad();
     }
 
 
@@ -153,4 +165,17 @@ public class ShopManager : MonoBehaviour
         shopItemsSO[1].basecost = 60;
 
     }
+    public void BeforeLoad()
+    {
+        Coast1 = shopItemsSO[0].basecost;
+        Coast2 = shopItemsSO[1].basecost;
+    }
+
+    public void AfterLoad()
+    {
+        shopItemsSO[0].basecost = Coast1;
+        shopItemsSO[1].basecost = Coast2;
+    }
+
+
 }

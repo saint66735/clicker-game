@@ -226,6 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93b8e0003f0faf4284f3d371f59a98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Coast1: 0
+  Coast2: 0
   coins: 0
   coinUI: {fileID: 1194262530891964628}
   shopItemsSO:
@@ -266,6 +268,8 @@ MonoBehaviour:
   - {fileID: 7660511641864647638}
   Logika: {fileID: 0}
   Facade: {fileID: 0}
+  Flora: {fileID: 0}
+  roundUp: 0
 --- !u!1 &4664467011578187492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1125,8 @@ MonoBehaviour:
   AktyvusKintamieji: {fileID: 4664467012520875169}
   PasyvusKintamieji: {fileID: 4664467012520875168}
   Kofai: {fileID: 4664467012520875174}
+  ActiveLogic: {fileID: 0}
+  PassiveLogic: {fileID: 0}
 --- !u!114 &4664467012520875174
 MonoBehaviour:
   m_ObjectHideFlags: 0
