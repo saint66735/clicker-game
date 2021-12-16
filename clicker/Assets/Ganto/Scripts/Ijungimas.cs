@@ -5,9 +5,11 @@ using UnityEngine;
 public class Ijungimas : MonoBehaviour
 {
 
-    public GameObject Parduotuve;
-    public GameObject Coins;
-    public GameObject Text;
+    public GameObject Shop_Canvas;
+    public GameObject Shop_Event;
+
+    public GameObject UI_Canvas;
+    public GameObject UI_Event;
 
     // Start is called before the first frame update
     void Start()
@@ -20,30 +22,41 @@ public class Ijungimas : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            if (Parduotuve.activeInHierarchy == true)
+            if (Shop_Canvas.activeInHierarchy == true)
             {
-                Parduotuve.SetActive(false);
+                Shop_Canvas.SetActive(false);
             }
             else
-                Parduotuve.SetActive(true);
+                Shop_Canvas.SetActive(true);
 
 
 
-            if (Coins.activeInHierarchy == true)
+            if (Shop_Event.activeInHierarchy == true)
             {
-                Coins.SetActive(false);
+                Shop_Event.SetActive(false);
             }
             else
-                Coins.SetActive(true);
+                Shop_Event.SetActive(true);
 
 
+            //--------------------------------------------//
 
-            if (Text.activeInHierarchy == true)
+
+            if (UI_Canvas.activeInHierarchy == true)
             {
-                Text.SetActive(false);
+                UI_Canvas.SetActive(false);
             }
             else
-                Text.SetActive(true);
+                UI_Canvas.SetActive(true);
+
+
+
+            if (UI_Event.activeInHierarchy == true)
+            {
+                UI_Event.SetActive(false);
+            }
+            else
+                UI_Event.SetActive(true);
         }
     }
 
