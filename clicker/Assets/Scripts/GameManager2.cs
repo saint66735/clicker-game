@@ -34,7 +34,7 @@ public class GameManager2 : MonoBehaviour
     }
     void NotifyLoad()
     {
-        Save.instance.ApplyLoad(instance);
+        Save.instance.ApplyLoad();
         CurrentState.instance.CaptureState();
     }
 

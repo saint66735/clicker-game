@@ -5,7 +5,7 @@ using UnityEngine;
 public class CurrentState : MonoBehaviour
 {
     public static CurrentState instance = null;
-    GameData currentState;
+    public GameData currentState;
     public bool dirtyFlag = false;
     void Awake()
     {

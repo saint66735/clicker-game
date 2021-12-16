@@ -77,8 +77,9 @@ public class Save : MonoBehaviour
         currentYen = data.yen;
         currentPetals = data.petals;
         currentPassiveIncomeCount = data.passiveBuildingCount;
-        currentPassiveIncomeCount = data.activeBuildingCount;
+        currentActiveIncomeCount = data.activeBuildingCount;
         currentState = data;
+        CurrentState.instance.currentState = data;
         return true;
     }
     public void NewGame()
@@ -89,7 +90,6 @@ public class Save : MonoBehaviour
     }
     public void ApplyLoad()
     {
-
         GameManager2.instance.building1Count = currentPassiveIncomeCount;
         GameManager2.instance.building2Count = currentActiveIncomeCount;
         GameManager2.instance.score = currentYen;
