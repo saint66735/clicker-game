@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour
     public GameObject ModsPanel;
     public GameObject StartPanel;
     public GameObject SavePanel;
+    public bool loaded = false;
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -50,6 +51,7 @@ public class MenuManager : MonoBehaviour
             StartPanel.SetActive(false);
             SettingsPanel.SetActive(false);
             SceneManager.LoadScene(1);
+            loaded = true;
         }
     }
     public void OnStartNewGame()

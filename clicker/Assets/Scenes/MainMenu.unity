@@ -2124,6 +2124,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf66d59a3428014fbae74412b5cc25e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState:
+    yen: 0
+    petals: 0
+    passiveBuildingCount: 0
+    activeBuildingCount: 0
+  dirtyFlag: 1
 --- !u!1 &1181085004
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,7 +2910,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1110276435}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: Save
+        m_MethodName: OnSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

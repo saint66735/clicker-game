@@ -11,7 +11,7 @@ public class Save : MonoBehaviour
     int currentActiveIncomeCount;
     public static Save instance = null;
     GameData currentState;
-    bool dirtyFlag = true;
+    
     void Awake()
     {
         if (instance != null && instance != this)
@@ -23,7 +23,7 @@ public class Save : MonoBehaviour
             instance = this;
         }
     }
-    public void GetState()
+    /*public void GetState()
     {
         GameData temp = GameManager2.instance.UpdateState();
         if (currentState == null || !currentState.Equals(temp))
@@ -35,7 +35,7 @@ public class Save : MonoBehaviour
         {
             dirtyFlag = false;
         }
-    }
+    }*/
     public void SaveFile()
     {
         currentState = CurrentState.instance.CaptureState();
