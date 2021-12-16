@@ -66,6 +66,8 @@ public class ShopManager : MonoBehaviour
         CheckPurchesable();
         roundUp = (float)System.Math.Round(Logika.score, 1);
         coinUI.text = roundUp.ToString();
+        GameManager2.instance.price1 = Coast1;
+        GameManager2.instance.price2 = Coast2;
     }
 
     public void AddCoins() //Prideda Pinigus
@@ -173,8 +175,8 @@ public class ShopManager : MonoBehaviour
 
     public void AfterLoad()
     {
-        shopItemsSO[0].basecost = Coast1;
-        shopItemsSO[1].basecost = Coast2;
+        shopItemsSO[0].basecost = GameManager2.instance.price1;
+        shopItemsSO[1].basecost = GameManager2.instance.price2;
     }
 
 

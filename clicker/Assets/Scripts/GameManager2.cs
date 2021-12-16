@@ -12,16 +12,17 @@ public class GameManager2 : MonoBehaviour
     public int building1Count;
     public int building2Count;
 
-    public int amountOfUpgrades;
+    public float price1;
+    public float price2;
     GameData data;
 
-  //  public ShopManager Shop;
+    //  public ShopManager Shop;
 
 
 
     void Start()
     {
-       // Shop = FindObjectOfType<ShopManager>();
+        // Shop = FindObjectOfType<ShopManager>();
 
 
         if (instance != null && instance != this)
@@ -44,11 +45,11 @@ public class GameManager2 : MonoBehaviour
     }
     public GameData UpdateState()
     {
-        return new GameData(score, 0, building1Count, building2Count);
+        return new GameData(score, 0, building1Count, building2Count, price1, price2);
     }
     void NotifyLoad()
     {
-        Save.instance.ApplyLoad();
+        Save.instance.ReceiveLoadConfirmation();
         CurrentState.instance.CaptureState();
     }
 

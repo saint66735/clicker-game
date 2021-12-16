@@ -23,19 +23,6 @@ public class Save : MonoBehaviour
             instance = this;
         }
     }
-    /*public void GetState()
-    {
-        GameData temp = GameManager2.instance.UpdateState();
-        if (currentState == null || !currentState.Equals(temp))
-        {
-            currentState = temp;
-            dirtyFlag = true;
-        }
-        else
-        {
-            dirtyFlag = false;
-        }
-    }*/
     public void SaveFile()
     {
         currentState = CurrentState.instance.CaptureState();
@@ -88,15 +75,22 @@ public class Save : MonoBehaviour
 
         if (File.Exists(destination)) File.Delete(destination);
     }
-    public void ApplyLoad()
+    void ApplyLoad()
     {
         GameManager2.instance.building1Count = currentPassiveIncomeCount;
         GameManager2.instance.building2Count = currentActiveIncomeCount;
         GameManager2.instance.score = currentYen;
         AktyviosPrekes.instance.VisosAktyviosPrekes = currentActiveIncomeCount;
         PasyviosPrekes.instance.VisosPasyviosPrekes = currentPassiveIncomeCount;
-        createFlora instance = FindObjectOfType<createFlora>();
-        instance.AddActiveItemFlora(currentActiveIncomeCount);
-        instance.AddPassiveItemFlora(currentPassiveIncomeCount);
+        createFlora floraInstance = FindObjectOfType<createFlora>();
+        floraInstance.AddActiveItemFlora(currentActiveIncomeCount);
+        floraInstance.AddPassiveItemFlora(currentPassiveIncomeCount);
+
+        GameManager2.instance.price1 = currentState.price1;
+        GameManager2.instance.price2 = currentState.price2;
+    }
+    public void ReceiveLoadConfirmation()
+    {
+        ApplyLoad();
     }
 }
