@@ -284,7 +284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4664467011578187499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -790,7 +790,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 30, y: 10}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4664467012010094650
 CanvasRenderer:
@@ -887,7 +887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4664467012112097945
 Transform:
   m_ObjectHideFlags: 0
@@ -1118,9 +1118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc56e51a176e8b46b92d45811fad270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AktyvusKintamieji: {fileID: 0}
-  PasyvusKintamieji: {fileID: 0}
-  Kofai: {fileID: 0}
+  AktyvusKintamieji: {fileID: 4664467012520875169}
+  PasyvusKintamieji: {fileID: 4664467012520875168}
+  Kofai: {fileID: 4664467012520875174}
 --- !u!114 &4664467012520875174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KiekAktyvausPaspaudimo: 0
-  AktyvausKofas: 0
+  VisosAktyviosPrekes: 0
 --- !u!114 &4664467012520875168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1160,7 +1160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KiekPasyvausPaspaudimo: 0
-  PasyvausKofas: 0
+  VisosPasyviosPrekes: 0
 --- !u!1 &4664467012649457767
 GameObject:
   m_ObjectHideFlags: 0
