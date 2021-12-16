@@ -14,7 +14,7 @@ public class GameManager2 : MonoBehaviour
 
     public int amountOfUpgrades;
     GameData data;
-    void Awake()
+    void Start()
     {
         if (instance != null && instance != this)
         {

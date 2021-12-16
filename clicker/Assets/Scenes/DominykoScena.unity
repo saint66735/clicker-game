@@ -314,6 +314,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GeltonaGele
       objectReference: {fileID: 0}
+    - target: {fileID: 2411971402976715801, guid: deb9c6f582af5ae46a0c726b668d1613, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3040734155590844067, guid: deb9c6f582af5ae46a0c726b668d1613, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -539,6 +543,10 @@ PrefabInstance:
     - target: {fileID: 7132542407733686784, guid: f097fbed9c765c9499787b4b49544a9d, type: 3}
       propertyPath: m_Name
       value: RaudonaGele
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132542407733686784, guid: f097fbed9c765c9499787b4b49544a9d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7615641031522937018, guid: f097fbed9c765c9499787b4b49544a9d, type: 3}
       propertyPath: m_RootOrder
@@ -1176,7 +1184,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860136579}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7beff0e65af0a94fa4b385e66f93805, type: 3}
   m_Name: 
