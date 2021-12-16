@@ -8,10 +8,7 @@ using System;
 
 public class ShopManager : MonoBehaviour
 {
-    public float Cost1;
-    public float Cost2;
-
-    public double coins;
+    public float coins;
     public TMP_Text coinUI;
     public ShopItemSO[] shopItemsSO;
     public GameObject[] shopPanelsSO;
@@ -24,8 +21,8 @@ public class ShopManager : MonoBehaviour
     public ShopFacade Facade;
     //Instanc geliu atsiradimui
     public createFlora Flora;
-    //MenuManager
-    //public MenuManager Menu;
+
+    public float roundUp;
 
 
 
@@ -38,7 +35,7 @@ public class ShopManager : MonoBehaviour
             shopPanelsSO[i].SetActive(true);
         }
         //coinUI.text = "Coins: " + coins.ToString();
-        
+
         CheckPurchesable();
 
 
@@ -46,16 +43,10 @@ public class ShopManager : MonoBehaviour
         Logika = FindObjectOfType<GameManager2>();
         Facade = FindObjectOfType<ShopFacade>();
         Flora = FindObjectOfType<createFlora>();
-        //Menu = FindObjectOfType<MenuManager>();
 
         KainuResetas();
+
         LoadPanels();
-
-        //if (Menu.loaded == false)
-        //{
-        //    KainuResetas();
-        //}
-
     }
 
     // Update is called once per frame
@@ -63,23 +54,24 @@ public class ShopManager : MonoBehaviour
     {
         coins = Logika.score;
         CheckPurchesable();
-        coinUI.text = Logika.score.ToString();
+        roundUp = (float)System.Math.Round(Logika.score, 1);
+        coinUI.text = roundUp.ToString();
     }
 
     public void AddCoins() //Prideda Pinigus
-    {                
+    {
         Logika.score = Logika.score + 500;
         CheckPurchesable();
     }
 
-    public void CheckPurchesable() 
+    public void CheckPurchesable()
     {
 
         for (int i = 0; i < shopItemsSO.Length; i++)
         {
-            if(coins >= shopItemsSO[i].basecost) 
+            if (coins >= shopItemsSO[i].basecost)
             {
-                myPurchaseBtns[i].interactable = true; 
+                myPurchaseBtns[i].interactable = true;
             }
             else
                 myPurchaseBtns[i].interactable = false;
@@ -116,17 +108,17 @@ public class ShopManager : MonoBehaviour
     }
 
 
-        public void LoadPanels()
-        {
+    public void LoadPanels()
+    {
 
         for (int i = 0; i < shopItemsSO.Length; i++)
-            {
-                shopPanels[i].titleTxt.text = shopItemsSO[i].title;
-                shopPanels[i].descriptionTxt.text = shopItemsSO[i].description;
-                shopPanels[i].costTxt.text = "Coins: " + shopItemsSO[i].basecost.ToString();
-            }
-
+        {
+            shopPanels[i].titleTxt.text = shopItemsSO[i].title;
+            shopPanels[i].descriptionTxt.text = shopItemsSO[i].description;
+            shopPanels[i].costTxt.text = "Coins: " + shopItemsSO[i].basecost.ToString();
         }
+
+    }
 
 
     public void AktyvausPadidinimas(int btnNo)
@@ -161,11 +153,4 @@ public class ShopManager : MonoBehaviour
         shopItemsSO[1].basecost = 60;
 
     }
-    public void IfLoaded()
-    {
-        shopItemsSO[0].basecost = Cost1;
-        shopItemsSO[1].basecost = Cost2;
-    }
-
 }
-
