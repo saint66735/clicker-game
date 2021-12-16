@@ -95,5 +95,8 @@ public class Save : MonoBehaviour
         GameManager2.instance.score = currentYen;
         AktyviosPrekes.instance.VisosAktyviosPrekes = currentActiveIncomeCount;
         PasyviosPrekes.instance.VisosPasyviosPrekes = currentPassiveIncomeCount;
+        createFlora instance = FindObjectOfType<createFlora>();
+        instance.AddActiveItemFlora(currentActiveIncomeCount);
+        instance.AddPassiveItemFlora(currentPassiveIncomeCount);
     }
 }

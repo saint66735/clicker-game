@@ -28,7 +28,7 @@ public class createFlora : MonoBehaviour
         {
             grass.location = GeneratePosition();
             grass.rotation = GenerateRotation();
-            Instantiate(yellowFlora, grass.location, Quaternion.Euler(grass.rotation));
+            Instantiate(redFlora, grass.location, Quaternion.Euler(grass.rotation));
         }
         
     }
