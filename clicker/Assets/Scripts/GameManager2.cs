@@ -13,7 +13,6 @@ public class GameManager2 : MonoBehaviour
     public int building2Count;
 
     public int amountOfUpgrades;
-
     GameData data;
     void Awake()
     {
@@ -24,7 +23,8 @@ public class GameManager2 : MonoBehaviour
         else
         {
             instance = this;
-            NotifyLoad();
+            if (FindObjectOfType<MenuManager>().loaded)
+                NotifyLoad();
         }
 
     }
