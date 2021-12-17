@@ -2130,6 +2130,8 @@ MonoBehaviour:
     petals: 0
     passiveBuildingCount: 0
     activeBuildingCount: 0
+    price1: 0
+    price2: 0
   dirtyFlag: 1
 --- !u!1 &1181085004
 GameObject:
@@ -3931,7 +3933,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1049284478}
+        m_TargetAssemblyTypeName: Options, Assembly-CSharp
+        m_MethodName: SelectResolution
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &2140900215
 MonoBehaviour:

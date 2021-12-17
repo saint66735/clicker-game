@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
     public GameObject StartPanel;
     public GameObject SavePanel;
     public bool loaded = false;
+    bool ingame = false;
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -32,7 +33,8 @@ public class MenuManager : MonoBehaviour
     }
     public void OnExitGame()
     {
-        Save.instance.SaveFile();
+        if (ingame)
+            Save.instance.SaveFile();
         Application.Quit();
     }
     public void OnSettingsClick()
@@ -52,6 +54,7 @@ public class MenuManager : MonoBehaviour
             SettingsPanel.SetActive(false);
             SceneManager.LoadScene(1);
             loaded = true;
+            ingame = true;
         }
     }
     public void OnStartNewGame()
@@ -60,6 +63,7 @@ public class MenuManager : MonoBehaviour
         SettingsPanel.SetActive(false);
         SceneManager.LoadScene(1);
         ClearSaveData();
+        ingame = true;
     }
     public void ClearSaveData()
     {
